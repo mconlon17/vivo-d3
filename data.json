@@ -1,0 +1,30 @@
+[
+    {
+	    "type": "Emeritus Faculty",
+		"count": 213
+	},
+	{
+	    "type": "Staff",
+		"count": 7025
+	},
+		{
+	    "type": "Faculty",
+		"count": 5825
+	},
+		{
+	    "type": "Postdoc",
+		"count": 564
+	},
+	{
+		"type": "Librarian",
+		"count": 48
+	},
+	{
+		"type": "Graduate Student",
+		"count": 25
+	},
+		{
+		"type": "NonFacultyAcademic",
+		"count": 4
+	}
+]

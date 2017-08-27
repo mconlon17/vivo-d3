@@ -1,0 +1,13 @@
+SELECT ?type (COUNT(DISTINCT ?uri) AS ?count)
+WHERE {
+      SELECT ?uri (SAMPLE(DISTINCT ?stype) AS ?type)
+      WHERE {
+        ?uri a foaf:Person .
+        ?uri a ufVivo:UFCurrentEntity .
+        ?uri a ?stype .
+        FILTER regex(?stype,'core','i')
+      }
+     GROUP BY ?uri
+}
+GROUP BY ?type
+ORDER BY DESC(?count)

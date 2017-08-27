@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<!--
+    inspector-results.html: Receive a VIVO uri GET from inspector-request.html, make
+	a SPARQL query to the UF VIVO sparql endpoint to retrieve the triples
+	associated with the VIVO uri.  Display the triples in three columns using d3.js
+	First column is the predicate of the triple with a link to the associated definition.
+	Second column is a "V" if the object is a resource.  Clicking the V takes one to the VIVO 
+		entry for the object.
+	Second column is blank if the object is a literal
+	Third column is the object of the triple with a link to an inspector-results.html page
+		for the object.
+
+    author       = "Michael Conlon"
+    copyright    = "Copyright 2013, University of Florida"
+    license      = "BSD 3-Clause license"
+    version      = "01.0"
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="wilma.css">
+
+<style>
+a.predicate {
+	display: block;
+	font-size: 14px;
+	padding-right: 1em;
+	margin-bottom: 2px;
+	float: left;
+	width: 38em;
+	text-align: right;
+}
+
+a.spacer {
+	display: block;
+	font-size: 14px;
+	padding-right: 1em;
+	margin-bottom: 2px;
+	float: left;
+	width: 1em;
+	text-align: right;
+}
+
+a.object {
+    display: block;
+	font-size: 14px;
+	padding-right: 1em;
+	margin-bottom: 2px;
+	margin-left: 41em;
+	text-align: left;
+	}
+	
+a:link{
+  font-family:arial, monospace;
+  text-decoration: none;
+  color: teal;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+a:visited{
+  color:black;
+  text-decoration: none;
+}
+</style>
+
+<script>
+
+// Three column output
+
+function draw(data) {
+	d3.select("#container")
+	.append("div")
+		.attr("class","columnar")
+	.selectAll("div.line")
+	.data(data.results.bindings)
+	.enter()
+	.append("div")
+		.attr("class","line")
+		
+	d3.selectAll("div.line")
+		.append("a")
+		.attr("class","predicate")
+		.attr("href",function(d) {return d.p.value})
+		.text(function(d) { return d.p.value})
+
+	d3.selectAll("div.line")
+		.append("a")
+		.attr("class","spacer")
+		.attr("href",function(d) { if((d.o.value.length > 8) && (d.o.value.substring(0,7) == "http://")) {return d.o.value;} else {return ".";}})
+		.text(function(d) { if((d.o.value.length > 8) && (d.o.value.substring(0,7) == "http://")) {return "V";} else {return " ";}})
+					
+		
+	d3.selectAll("div.line")
+		.append("a")
+			.attr("class","object")
+			.attr("href",function(d) { if((d.o.value.length > 8) && (d.o.value.substring(0,7) == "http://")) {return "/inspector-results.html?vivouri="+d.o.value;} else {return ".";}})
+			.text(function(d){if (d.o.value.length >0) {return d.o.value;} else {return "No value";}})
+			
+	d3.select("#header")
+		.append("h2")
+		.text(function(d) {return "Triples for "+uri})
+}
+</script>
+<script>
+
+// SPARQL Call
+
+    var format = 'format=application%2Fsparql-results%2Bjson%0A';
+    var endpointURL = 'http://sparql.vivo.ufl.edu:3030/VIVO/sparql?default-graph=&save=display&fname=&timeout=7000&should-sponge=soft&debug=on';
+	var uri = unescape(window.location.search.split('=')[1])
+    var query = "%0ASELECT+%3Fp+%3Fo%0AWHERE+%7B%0A++%3C"+uri+"%3E+%3Fp+%3Fo%0A%7D%0AORDER+BY+%3Fp%0A"
+	var querystring = endpointURL + '&query=' + query + '&' + format;
+	$.getJSON(querystring, function(data) {	draw(data); });
+</script>
+</head>
+<body style="margin: 50px;">
+    <div id="header"></div>
+	<div id="container"></div>
+</body>
+</html>

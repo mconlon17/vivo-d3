@@ -1,0 +1,31 @@
+<html>
+<!--
+    inspector-request.html: Present a form to a user for them to enter a VIVO URI to 
+	be inspected.  Use a GET to inspector-results.html to display the triples that 
+	have the URI has a subject.
+
+    author       = "Michael Conlon"
+    copyright    = "Copyright 2013, University of Florida"
+    license      = "BSD 3-Clause license"
+    version      = "01.0"
+-->
+
+  <head>
+    <link type="text/css" rel="stylesheet" href="wilma.css" />
+    <title>Show VIVO Triples</title>
+  </head>
+  <body style="margin:50px;">
+  <h2>Show VIVO Triples</h2>
+    <p>The Inspector will list all the VIVO triples that have, as their subject, the specified URI</p>
+
+    <form action="/inspector-results.html" method="get">
+        <p>
+            <label for="vivo_uri">URI to be inspected</label>
+            <input size="60"  type="text" name="vivo_uri" value="" />
+        </p>
+        <p class="submit">
+            <input type="submit" id="submit" value="Submit"/>
+        </p>
+    </form>
+  </body>
+</html>

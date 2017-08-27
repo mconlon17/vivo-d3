@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="simple.css">
+<script>
+function draw(data) {
+	"use strict";
+	d3.select("#container")
+		.append("ul")
+		.selectAll("li")
+		.data(data.results.bindings)
+		.enter()
+		.append("li")
+			.attr("class","paper")
+
+	d3.selectAll("li.paper")
+		.append("div")
+			.attr("class","title")
+			.text(function(d){return "\"" + d.title.value + ".\" "})
+			
+	d3.selectAll("li.paper")
+		.append("div")
+			.attr("class","journal")
+			.text(function(d){return d.journal.value + " "})
+			
+	d3.selectAll("li.paper")
+		.append("div")
+			.attr("class","volume")
+			.text(function(d){return d.volume.value + " "})
+			
+	d3.selectAll("li.paper")
+		.append("div")
+			.attr("class","year")
+			.text(function(d){return "(" + d.dt.value.substring(0,4) + ")"})
+			
+	d3.selectAll("li.paper")
+		.append("div")
+			.attr("class","pagestart")
+			.text(function(d){return ": " + d.pagestart.value})
+			
+	d3.selectAll("li.paper")
+		.append("div")
+			.attr("class","pageend")
+			.text(function(d){return "-" + d.pageend.value + ". "})
+			
+	d3.selectAll("li.paper")
+		.append("div")
+			.attr("class","doi")
+			.text(function(d){return "doi:" + d.doi.value + " "})		
+		
+	return papers;
+}
+
+</script>
+</head>
+<body>
+<h1>
+Papers by UF authors
+</h1>
+    <script>
+	d3.json("papers-sample.json",draw);
+	</script>
+	<div id="container"></div>
+</body>
+</html>

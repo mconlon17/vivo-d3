@@ -1,0 +1,75 @@
+{
+  "head": {
+    "vars": [ "uri" , "title" , "nauthors" , "journal" , "volume" , "dt" , "pagestart" , "pageend" , "doi" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "uri": { "type": "uri" , "value": "http://vivo.ufl.edu/individual/n4268941939" } ,
+        "title": { "type": "literal" , "value": "Pleiotropy and Its Dissection Through a Metabolic Gene Miniature1 (Mn1) That Encodes a Cell Wall Invertase in Developing Seeds of Maize" } ,
+        "nauthors": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" } ,
+        "journal": { "type": "literal" , "value": "Plant Science" } ,
+        "volume": { "type": "literal" , "value": "184" } ,
+        "dt": { "type": "literal" , "value": "2012-03-01" } ,
+        "pagestart": { "type": "literal" , "value": "45" } ,
+        "pageend": { "type": "literal" , "value": "53" } ,
+        "doi": { "type": "literal" , "value": "10.1016/j.plantsci.2011.12.011" }
+      } ,
+      {
+        "uri": { "type": "uri" , "value": "http://vivo.ufl.edu/individual/n7995076810" } ,
+        "title": { "type": "literal" , "value": "Prefrontal Cortical-Striatal Dopamine Receptor Mrna Expression Predicts Distinct Forms of Impulsivity" } ,
+        "nauthors": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "6" } ,
+        "journal": { "type": "literal" , "value": "European Journal of Neuroscience" } ,
+        "volume": { "type": "literal" , "value": "37" } ,
+        "dt": { "type": "literal" , "value": "2013-06-01" } ,
+        "pagestart": { "type": "literal" , "value": "1779" } ,
+        "pageend": { "type": "literal" , "value": "1788" } ,
+        "doi": { "type": "literal" , "value": "10.1111/ejn.12191" }
+      } ,
+      {
+        "uri": { "type": "uri" , "value": "http://vivo.ufl.edu/individual/n7780941707" } ,
+        "title": { "type": "literal" , "value": "A Toast To Health and Performance! Beetroot Juice Lowers Blood Pressure and the O(2) Cost of Exercise" } ,
+        "nauthors": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" } ,
+        "journal": { "type": "literal" , "value": "Journal of Applied Physiology" } ,
+        "volume": { "type": "literal" , "value": "110" } ,
+        "dt": { "type": "literal" , "value": "2011-03-01" } ,
+        "pagestart": { "type": "literal" , "value": "585" } ,
+        "pageend": { "type": "literal" , "value": "586" } ,
+        "doi": { "type": "literal" , "value": "10.1152/japplphysiol.01457.2010" }
+      } ,
+      {
+        "uri": { "type": "uri" , "value": "http://vivo.ufl.edu/individual/n9941149315" } ,
+        "title": { "type": "literal" , "value": "Systemic, Renal, and Colonic Effects of Intravenous and Enteral Rehydration in Horses" } ,
+        "nauthors": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" } ,
+        "journal": { "datatype": "http://www.w3.org/2001/XMLSchema#string" , "type": "typed-literal" , "value": "Journal of Veterinary and Internal Medicine" } ,
+        "volume": { "type": "literal" , "value": "27" } ,
+        "dt": { "type": "literal" , "value": "2013-05-01" } ,
+        "pagestart": { "type": "literal" , "value": "554" } ,
+        "pageend": { "type": "literal" , "value": "566" } ,
+        "doi": { "type": "literal" , "value": "10.1111/jvim.12073" }
+      } ,
+      {
+        "uri": { "type": "uri" , "value": "http://vivo.ufl.edu/individual/n6231995108" } ,
+        "title": { "type": "literal" , "value": "Serum Brain-Derived Neurotrophic Factor Response To Aerobic Exercise in Multiple Sclerosis" } ,
+        "nauthors": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" } ,
+        "journal": { "datatype": "http://www.w3.org/2001/XMLSchema#string" , "type": "typed-literal" , "value": "Journal of the Neurological Sciences" } ,
+        "volume": { "type": "literal" , "value": "269" } ,
+        "dt": { "type": "literal" , "value": "2008-06-01" } ,
+        "pagestart": { "type": "literal" , "value": "85" } ,
+        "pageend": { "type": "literal" , "value": "91" } ,
+        "doi": { "type": "literal" , "value": "10.1016/j.jns.2007.12.030" }
+      } ,
+      {
+        "uri": { "type": "uri" , "value": "http://vivo.ufl.edu/individual/n2717473760" } ,
+        "title": { "type": "literal" , "value": "Role of Primary Somatosensory Cortex in the Coding of Pain" } ,
+        "nauthors": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "5" } ,
+        "journal": { "type": "literal" , "value": "Pain" } ,
+        "volume": { "type": "literal" , "value": "154" } ,
+        "dt": { "type": "literal" , "value": "2013-03-01" } ,
+        "pagestart": { "type": "literal" , "value": "334" } ,
+        "pageend": { "type": "literal" , "value": "344" } ,
+        "doi": { "type": "literal" , "value": "10.1016/j.pain.2012.10.021" }
+      }
+	]
+  }
+}

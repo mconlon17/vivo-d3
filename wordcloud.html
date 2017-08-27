@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+      
+<!-- Begin TermCloud-->
+    <link rel="stylesheet" type="text/css" href="http://visapi-gadgets.googlecode.com/svn/trunk/termcloud/tc.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+   
+    <script type="text/javascript" src="http://visapi-gadgets.googlecode.com/svn/trunk/termcloud/tc.js"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script>
+
+    var providerURI = "http://vivo.ufl.edu/individual/n1665";
+    var format = 'format=application%2Fsparql-results%2Bjson%0A';
+    var endpointURL = 'http://vivodevweb.vivo.ufl.edu:3030/VIVO/query';
+      
+    //SPARQL QUERY TO GET PROVIDER EXPERTISE TERMS
+	
+    var query = ""
+        +"PREFIX obo: <http://purl.obolibrary.org/obo/>" + '\n'
+        +"SELECT    ?expertise ?label ?weight" + '\n'
+        +"WHERE" + '\n'
+        +"{" + '\n'
+        +"## Select the expertise for  provider passed in form querystring from providerURI" + '\n'
+		+"<" + providerURI + ">"
+        +"obo:BFO_0000086 ?expertise." + '\n'
+        +"" + '\n'
+        +"## Select measurements contributing to expertise" + '\n'
+        +"?expertise_measurement obo:IAO_0000221 ?expertise." + '\n'
+        +"" + '\n'
+        +"## Select the weight and the label for measurements" + '\n'
+        +"?expertise_measurement obo:ARG_2000012 ?label." + '\n'
+        +"?expertise_measurement  obo:IAO_0000004 ?weight."  + '\n'
+        +"" + '\n'
+        +"}"  + '\n';
+    
+	var querystring = endpointURL + "?query="+encodeURIComponent(query) + '&' + format;
+
+$.getJSON(querystring,
+{
+}, function(data) {
+	    for (i = 0; i < data.results.bindings.length; i++){
+         }		 
+       draw(data);
+});
+</script> 
+</head>
+<body>
+<h1 style="font-family:san-serif; 14 px; margin-left: 50 px;">Term Cloud of Expertise</h1>
+<p style="font-family:sans-serif; 11 px; margin-left: 50px; margin-right: 50px">
+    The term cloud below was generated from VIVO by asking for all terms associated with a clinical provider's expertise.
+	The collection of labels from the International Classification of Disease (ICD) codes utilized by this person over a one year period are aggregated.
+	The larger the term in the Term Cloud the more often it was utilized and the higher weighting it was given. 
+	To find other people in the CTSA consortium whose work is related to each term simply click on the term itself.
+</p>
+ 
+   <hr>
+   <div id="tcdiv" width=100 ></div>
+   <script type="text/javascript">
+      var weight = 1 ;
+      google.load("visualization", "1");
+      google.setOnLoadCallback(draw);
+      function draw(data) {
+        datatbl = new google.visualization.DataTable();
+        datatbl.addColumn('string', 'Label');
+        datatbl.addColumn('number', 'Value');
+        datatbl.addColumn('string', 'Link');
+        datatbl.addRows(50);
+    
+          for (i = 0; i < 50; i++){
+ 
+        datatbl.setValue(i, 0, data.results.bindings[i].label.value);
+        datatbl.setValue(i, 1, parseFloat(data.results.bindings[i].weight.value * 100));
+        datatbl.setValue(i, 2, 'http://research.icts.uiowa.edu/polyglot/ctsaSearch.jsp?query=' + encodeURIComponent(data.results.bindings[i].label.value) + '');
+       
+        }
+        
+       
+        var outputDiv = document.getElementById('tcdiv');
+        var tc = new TermCloud(outputDiv);
+                tc.draw(datatbl,{target:'_blank'});
+      }
+   
+    </script>      
+    <hr>  
+<!--End Term Cloud-->
+   <div id="table_div"></div> 
+</body>
+</html>

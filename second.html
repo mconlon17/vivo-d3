@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="simple.css">
+<script>
+function draw(data) {
+	d3.select("#container")
+	.append("div")
+		.attr("class","chart")
+	.selectAll("div.line")
+	.data(data)
+	.enter()
+	.append("div")
+		.attr("class","line")
+		
+	d3.selectAll("div.line")
+		.append("div")
+		.attr("class","label")
+		.text(function(d) { return d.type })
+		
+	d3.selectAll("div.line")
+		.append("div")
+			.attr("class","bar")
+			.style("width",function(d){return d.count/15 + "px"})
+			.text(function(d){return d.count})
+}
+
+</script>
+</head>
+<body>
+    <script>
+	d3.json("data.json",draw);
+	</script>
+	<div id="container"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="../d3.layout.cloud.js"></script>
+<script>
+  var fill = d3.scale.category20();
+  width = 1200
+  height = 600
+
+  d3.layout.cloud().size([width, height])
+		.words(
+		[{"text": "Florida", "size": 1220}, {"text": "Research", "size": 1192}, {"text": "Study", "size": 1101}, {"text": "Development", "size": 840}, {"text": "Program", "size": 811}, {"text": "Evaluation", "size": 619}, {"text": "Management", "size": 565}, {"text": "Control", "size": 544}, {"text": "Phase", "size": 533}, {"text": "Support", "size": 528}, {"text": "Project", "size": 463}, {"text": "Safety", "size": 447}, {"text": "Analysis", "size": 435}, {"text": "Center", "size": 414}, {"text": "Effects", "size": 409}, {"text": "Citrus", "size": 399}, {"text": "Training", "size": 398}, {"text": "Disease", "size": 397}, {"text": "System", "size": 390}, {"text": "Education", "size": 385}, {"text": "Treatment", "size": 367}, {"text": "Efficacy", "size": 354}, {"text": "from", "size": 354}, {"text": "Randomized", "size": 352}, {"text": "Using", "size": 347}, {"text": "Health", "size": 340}, {"text": "Therapy", "size": 336}, {"text": "Trial", "size": 321}, {"text": "Use", "size": 314}, {"text": "Water", "size": 311}, {"text": "Services", "size": 307}, {"text": "Patients", "size": 293}, {"text": "Gene", "size": 278}, {"text": "Assessment", "size": 278}, {"text": "Clinical", "size": 265}, {"text": "Fellowship", "size": 262}, {"text": "Production", "size": 261}, {"text": "Grant", "size": 257}, {"text": "Agreement", "size": 255}, {"text": "County", "size": 253}, {"text": "High", "size": 252}, {"text": "Model", "size": 248}, {"text": "Data", "size": 247}, {"text": "New", "size": 237}, {"text": "Systems", "size": 234}, {"text": "Quality", "size": 232}, {"text": "Cancer", "size": 226}, {"text": "Collaborative", "size": 215}, {"text": "Novel", "size": 215}, {"text": "Testing", "size": 212}, {"text": "Cell", "size": 206}, {"text": "National", "size": 204}, {"text": "Studies", "size": 196}, {"text": "Evaluate", "size": 193}, {"text": "Role", "size": 192}, {"text": "Modeling", "size": 190}, {"text": "Plant", "size": 187}, {"text": "Characterization", "size": 185}, {"text": "Resistance", "size": 184}, {"text": "Care", "size": 182}, {"text": "Monitoring", "size": 179}, {"text": "Design", "size": 179}, {"text": "Materials", "size": 177}, {"text": "Response", "size": 176}, {"text": "Effect", "size": 174}, {"text": "Network", "size": 174}, {"text": "University", "size": 173}, {"text": "Technology", "size": 173}, {"text": "Field", "size": 172}, {"text": "Molecular", "size": 169}, {"text": "Mechanisms", "size": 169}, {"text": "Detection", "size": 166}, {"text": "Genetic", "size": 162}, {"text": "Human", "size": 161}, {"text": "Cells", "size": 160}, {"text": "Multicenter", "size": 158}, {"text": "Function", "size": 157}, {"text": "River", "size": 157}, {"text": "Double-Blind", "size": 155}, {"text": "Impact", "size": 154}, {"text": "Through", "size": 152}, {"text": "Risk", "size": 149}, {"text": "Brain", "size": 147}, {"text": "Based", "size": 146}, {"text": "Methods", "size": 144}, {"text": "Service", "size": 143}, {"text": "Oral", "size": 142}, {"text": "Integrated", "size": 140}, {"text": "Contract", "size": 139}, {"text": "Biological", "size": 139}, {"text": "Children", "size": 138}, {"text": "Controlled", "size": 134}, {"text": "Ipa", "size": 132}, {"text": "Environmental", "size": 131}, {"text": "Science", "size": 131}, {"text": "Task", "size": 131}, {"text": "Performance", "size": 130}, {"text": "Regulation", "size": 127}, {"text": "Potential", "size": 127}, {"text": "Soil", "size": 126}, {"text": "Energy", "size": 124}, {"text": "Medical", "size": 124}, {"text": "Planning", "size": 123}, {"text": "Identification", "size": 121}, {"text": "Invasive", "size": 120}, {"text": "Advanced", "size": 119}, {"text": "Tropical", "size": 119}, {"text": "III", "size": 118}, {"text": "Developing", "size": 118}, {"text": "Prevention", "size": 118}, {"text": "Community", "size": 117}, {"text": "Models", "size": 116}, {"text": "Stdy", "size": 116}, {"text": "Growth", "size": 115}, {"text": "Application", "size": 115}, {"text": "Economic", "size": 114}, {"text": "Diabetes", "size": 113}, {"text": "Professional", "size": 112}, {"text": "Natural", "size": 112}, {"text": "Agricultural", "size": 111}, {"text": "Open-Label", "size": 111}, {"text": "Miscellaneous", "size": 111}, {"text": "Strategies", "size": 110}, {"text": "Group", "size": 110}, {"text": "Species", "size": 110}, {"text": "Early", "size": 110}, {"text": "Investigation", "size": 109}, {"text": "Improving", "size": 109}, {"text": "Information", "size": 108}, {"text": "Injury", "size": 108}, {"text": "Donors", "size": 108}, {"text": "Laboratory", "size": 105}, {"text": "Pest", "size": 105}, {"text": "Virus", "size": 105}, {"text": "Type", "size": 104}, {"text": "Supplement", "size": 104}, {"text": "Approach", "size": 104}, {"text": "State", "size": 103}, {"text": "After", "size": 103}, {"text": "Food", "size": 102}, {"text": "Nutrient", "size": 102}, {"text": "Dynamics", "size": 102}, {"text": "Initiative", "size": 101}, {"text": "Implementation", "size": 101}, {"text": "Survey", "size": 101}, {"text": "Population", "size": 101}, {"text": "Protection", "size": 100}, {"text": "Engineering", "size": 100}, {"text": "Assess", "size": 100}, {"text": "Placebo", "size": 100}, {"text": "Drug", "size": 100}, {"text": "Stroke", "size": 99}, {"text": "Area", "size": 98}, {"text": "Applications", "size": 98}, {"text": "Subjects", "size": 97}, {"text": "School", "size": 97}, {"text": "Pilot", "size": 96}, {"text": "Evaluating", "size": 96}, {"text": "International", "size": 96}, {"text": "Extension", "size": 95}, {"text": "Test", "size": 95}, {"text": "Stress", "size": 94}, {"text": "Dose", "size": 94}, {"text": "During", "size": 94}, {"text": "Low", "size": 94}, {"text": "Placebo-Controlled", "size": 93}, {"text": "Related", "size": 93}, {"text": "Multiple", "size": 91}, {"text": "Acute", "size": 91}, {"text": "Order", "size": 90}, {"text": "Irrigation", "size": 90}, {"text": "Public", "size": 90}, {"text": "into", "size": 89}, {"text": "Factors", "size": 89}, {"text": "Habitat", "size": 89}, {"text": "Rehabilitation", "size": 89}, {"text": "Plan", "size": 89}, {"text": "Cms", "size": 88}, {"text": "Chemical", "size": 88}, {"text": "Experimental", "size": 88}, {"text": "Interactions", "size": 88}, {"text": "Small", "size": 88}, {"text": "Between", "size": 87}, {"text": "Practices", "size": 87}, {"text": "Plants", "size": 87}, {"text": "Structure", "size": 86}, {"text": "Imaging", "size": 86}, {"text": "Award", "size": 86}, {"text": "Life", "size": 86}, {"text": "American", "size": 85}, {"text": "Conservation", "size": 85}, {"text": "Activity", "size": 85}, {"text": "Asian", "size": 85}, {"text": "Optimization", "size": 85}, {"text": "Following", "size": 85}, {"text": "Associated", "size": 85}, {"text": "Stem", "size": 85}, {"text": "Hlb", "size": 84}, {"text": "Outcomes", "size": 84}, {"text": "Restoration", "size": 84}]
+		)
+		.padding(5)
+/*		.rotate(function() { return ~~(Math.random() * 2) * 90; }) */
+		.rotate(function(){ return 0;})
+		.font("Impact")
+		.fontSize(function(d) { return d.size/10; })
+		.on("end", draw)
+		.start();
+
+  function draw(words) {
+    d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+      .append("g")
+        .attr("transform", "translate("+width/2+","+height/2+")")
+      .selectAll("text")
+        .data(words)
+      .enter().append("text")
+        .style("font-size", function(d) { return d.size + "px"; })
+        .style("font-family", "Impact")
+        .style("fill", function(d, i) { return fill(i); })
+        .attr("text-anchor", "middle")
+        .attr("transform", function(d) {
+          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+        })
+        .text(function(d) { return d.text; });
+  }
+</script>

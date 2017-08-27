@@ -1,0 +1,37 @@
+{
+  "head": {
+    "vars": [ "type" , "count" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "type": { "type": "uri" , "value": "http://vivoweb.org/ontology/core#NonAcademic" } ,
+        "count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "7305" }
+      } ,
+      {
+        "type": { "type": "uri" , "value": "http://vivoweb.org/ontology/core#FacultyMember" } ,
+        "count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "5922" }
+      } ,
+      {
+        "type": { "type": "uri" , "value": "http://vivoweb.org/ontology/core#Postdoc" } ,
+        "count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "658" }
+      } ,
+      {
+        "type": { "type": "uri" , "value": "http://vivoweb.org/ontology/core#EmeritusFaculty" } ,
+        "count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "213" }
+      } ,
+      {
+        "type": { "type": "uri" , "value": "http://vivoweb.org/ontology/core#Librarian" } ,
+        "count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "48" }
+      } ,
+      {
+        "type": { "type": "uri" , "value": "http://vivoweb.org/ontology/core#GraduateStudent" } ,
+        "count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "25" }
+      } ,
+      {
+        "type": { "type": "uri" , "value": "http://vivoweb.org/ontology/core#NonFacultyAcademic" } ,
+        "count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" }
+      }
+    ]
+  }
+}

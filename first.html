@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="simple.css">
+<script>
+function draw(data) {
+    var table = d3.select("#container").append("table"),
+        thead = table.append("thead"),
+        tbody = table.append("tbody"),
+		columns = ["type","count"];
+
+    // append the header row
+    thead.append("tr")
+        .selectAll("th")
+        .data(columns)
+        .enter()
+        .append("th")
+			.style("text-align",function(column){
+			    if (column == "type") { return "left"; } else {return "right";}})
+            .text(function(column) { return column; });
+
+    // create a row for each object in the data
+    var rows = tbody.selectAll("tr")
+        .data(data)
+        .enter()
+        .append("tr");
+
+    // create a cell in each row for each column
+    var cells = rows.selectAll("td")
+        .data(function(row) {
+            return columns.map(function(column) {
+                return {column: column, value: row[column]};
+            });
+        })
+        .enter()
+        .append("td")
+		    .style("text-align",function(d){
+			    if (d.column == "type") { return "left"; } else {return "right";}})
+            .text(function(d) { return d.value; });
+    
+    return table;
+}
+
+</script>
+</head>
+<body>
+    <script>
+	d3.json("data.json",draw);
+	</script>
+	<div id="container"></div>
+</body>
+</html>
